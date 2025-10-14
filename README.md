@@ -98,8 +98,8 @@ conda activate protein-gnn
 
 3. **Install core dependencies**:
 ```bash
-pip install torch torchvision torchaudio
-pip install dgl
+pip install  dgl -f https://data.dgl.ai/wheels/torch-2.1/cu118/repo.html
+pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu118
 pip install pandas numpy scipy scikit-learn
 pip install biopandas biopython
 pip install transformers tokenizers
