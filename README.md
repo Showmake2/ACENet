@@ -90,18 +90,6 @@ git clone https://github.com/LPDI-EPFL/masif.git
 # Configure MSMS and other surface analysis tools
 ```
 
-5. **Set up directory structure**:
-```
-project/
-├── pdbs/                    # PDB files directory
-├── triangulation/           # MaSIF triangulation module
-├── aminoacids.csv          # Amino acid properties
-├── ACENet.pth             # Pre-trained model
-├── gnn_data.ipynb         # Data processing
-├── exact_surface.ipynb    # Surface analysis
-├── predict.ipynb          # Prediction script
-└── README.md              # This file
-```
 
 ## Usage
 
@@ -117,8 +105,8 @@ entry
 Run surface analysis to identify surface amino acids:
 
 ```bash
-# Run exact_surface.ipynb
-jupyter notebook exact_surface.ipynb
+# Run exact_surface.py
+python exact_surface.py
 ```
 
 This will:
