@@ -45,36 +45,13 @@ tqdm
 The project uses Facebook's ESM (Evolutionary Scale Modeling) protein language model:
 
 ```bash
-pip install torch torchvision torchaudio
-pip install transformers
-pip install fair-esm  # Optional: for direct ESM access
+pip install biopython IPython pandas transformers biopandas -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+conda install -c bioconda msms
+conda install -c dglteam/label/cu121 dgl
+conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=12.1 -c pytorch -c nvidia
 ```
 
-### MaSIF Dependencies (Required for Surface Analysis)
 
-For the surface analysis component (`exact_surface.ipynb`), you need to install MaSIF dependencies:
-
-1. **Clone MaSIF Repository**:
-```bash
-git clone https://github.com/LPDI-EPFL/masif.git
-cd masif
-```
-
-2. **Install MaSIF Dependencies**:
-```bash
-# Follow MaSIF installation instructions
-# Key dependencies include:
-- MSMS (Molecular Surface Mesh Solver)
-- PyMesh
-- Open3D
-- scipy
-- sklearn
-```
-
-3. **Set up MSMS**:
-   - Download MSMS from https://cgl.ucsf.edu/msms/
-   - Ensure MSMS executable is in your PATH
-   - Update the `triangulation/computeMSMS.py` path in your code
 
 ### Additional Files Required
 
