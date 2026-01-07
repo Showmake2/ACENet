@@ -127,30 +127,6 @@ This will:
 
 ## File Descriptions
 
-### `gnn_data.ipynb`
-- **Purpose**: Data preprocessing and feature extraction
-- **Key Functions**:
-  - `get_distance_matrix()`: Computes distance matrices from 3D coordinates
-  - `generate_graph()`: Creates DGL graphs from protein structures
-  - `esm_encode()`: Generates ESM embeddings for protein sequences
-  - `physchem_encode()`: Adds physicochemical properties
-  - `get_embedding()`: Main processing pipeline
-
-### `exact_surface.ipynb`
-- **Purpose**: Surface amino acid identification
-- **Key Functions**:
-  - `get_surface_aa()`: Identifies surface residues using MSMS
-  - `selected_surface_aa()`: Extracts surface amino acid sequences
-  - `get_surface_pos()`: Batch processes proteins for surface analysis
-- **Dependencies**: Requires MaSIF installation
-
-### `predict.ipynb`
-- **Purpose**: Model inference and prediction
-- **Key Components**:
-  - `GraphDataset`: Custom dataset class for loading processed data
-  - `GCN`: Graph Convolutional Network implementation
-  - `GNNModel`: Complete model architecture
-  - Prediction pipeline with pre-trained weights
 
 ## Model Architecture
 
@@ -179,46 +155,3 @@ entry,surface_index
 - `seq_feature_*.npz`: Sequence embeddings
 - `surface_aa_feature_*.npz`: Surface-specific features
 - `overview_df.csv`: Metadata and file paths
-
-## Example Usage
-
-```python
-# Load and process a single protein
-from your_modules import get_embedding, get_surface_pos
-
-# 1. Extract surface information
-get_surface_pos('input.csv', 'output_with_surface.csv')
-
-# 2. Generate embeddings and graphs
-get_embedding('output_with_surface.csv', 'processed_data/')
-
-# 3. Make predictions
-# Run prediction notebook with processed data
-```
-
-## Troubleshooting
-
-### Common Issues
-
-1. **CUDA/GPU Issues**: 
-   - Ensure PyTorch is installed with correct CUDA version
-   - Modify device settings if GPU unavailable
-
-2. **ESM Model Loading**:
-   - First run may take time to download ESM weights
-   - Ensure internet connection for model download
-
-3. **MaSIF/MSMS Issues**:
-   - Verify MSMS installation and PATH configuration
-   - Check triangulation module imports
-
-4. **Memory Issues**:
-   - Reduce batch size for large proteins
-   - Use CPU mode if GPU memory insufficient
-
-### Performance Tips
-
-- Use GPU acceleration when available
-- Process proteins in batches for better efficiency
-- Pre-compute surface analysis for large datasets
-- Monitor memory usage during embedding generation
