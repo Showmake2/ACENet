@@ -40,19 +40,6 @@ scikit-learn
 tqdm
 ```
 
-### ESM Model Dependencies
-
-The project uses Facebook's ESM (Evolutionary Scale Modeling) protein language model:
-
-```bash
-pip install biopython IPython pandas transformers biopandas -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
-conda install -c bioconda msms
-conda install -c dglteam/label/cu121 dgl
-conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=12.1 -c pytorch -c nvidia
-```
-
-
-
 ### Additional Files Required
 
 - `aminoacids.csv` - Amino acid physicochemical properties database
@@ -63,32 +50,25 @@ conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=
 
 1. **Clone the repository** (or set up your project directory):
 ```bash
-git clone <your-repository-url>
-cd protein-gnn-analysis
+git clone https://github.com/Showmake2/ACENet.git
+cd ACENet
 ```
 
 2. **Create conda environment**:
 ```bash
-conda create -n protein-gnn python=3.8
-conda activate protein-gnn
+conda create -n ACENet python=3.8
+conda activate ACENet
 ```
 
 3. **Install core dependencies**:
 ```bash
-pip install  dgl -f https://data.dgl.ai/wheels/torch-2.1/cu118/repo.html
-pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu118
-pip install pandas numpy scipy scikit-learn
-pip install biopandas biopython
-pip install transformers tokenizers
-pip install tqdm
+pip install biopython IPython pandas transformers biopandas -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+conda install -c bioconda msms
+conda install -c dglteam/label/cu121 dgl
+conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=12.1 -c pytorch -c nvidia
 ```
 
-4. **Install MaSIF for surface analysis**:
-```bash
-# Follow MaSIF installation guide
-git clone https://github.com/LPDI-EPFL/masif.git
-# Configure MSMS and other surface analysis tools
-```
+
 
 
 ## Usage
@@ -120,7 +100,7 @@ Process protein structures and extract features:
 
 ```bash
 # Run gnn_data.ipynb  
-jupyter notebook gnn_data.ipynb
+python gnn_data.py
 ```
 
 This step:
@@ -136,7 +116,7 @@ Make predictions using the trained model:
 
 ```bash
 # Run predict.ipynb
-jupyter notebook predict.ipynb
+python predict.py
 ```
 
 This will:
