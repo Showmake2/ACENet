@@ -62,10 +62,11 @@ conda activate ACENet
 
 3. **Install core dependencies**:
 ```bash
-conda install -c dglteam/label/th21_cu118 dgl
-conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=11.8 -c pytorch -c nvidia
+conda install -c dglteam/label/cu121 dgl
+conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=12.1 -c pytorch -c nvidia
+conda install mkl=2021.4.0 --yes
+pip install pydantic torchdata requests tqdm numpy scipy networkx biopython IPython biopandas transformers openai
 conda install -c bioconda msms
-pip install biopython IPython pandas transformers biopandas -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 ```
 
 
